@@ -1,0 +1,28 @@
+.store {
+    height: 150px;
+    background-position: center;
+    background-size: cover;
+    border-radius: 5px;
+    position: relative;
+
+    ion-badge {
+        margin-top: 14px;
+        margin-left: 10px;
+    }
+
+    h5 {
+        color: white;
+        text-align: center;
+        font-size: 18px;
+        margin-top: 23px;
+        font-weight: 600;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 28%;
+    }
+}
+
+ion-searchbar {
+    padding-bottom: 1px;
+}

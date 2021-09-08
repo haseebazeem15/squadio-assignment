@@ -1,0 +1,24 @@
+<ion-card (click)="emitClick()">
+  <ion-card-content class="ion-no-margin ion-no-padding">
+    <ion-item lines="none">
+      <ion-img style="border-radius: 4pt;
+      height: 80px" src="https://www.belaamie.com/wp-content/uploads/2020/09/Puffed-Rice.jpg"  slot="start"></ion-img>
+      <ion-label>
+        <h2 class="title">Product 1</h2>
+        <h2 class="desc">Green, XL</h2>
+
+        <p class="price">$20</p>
+
+      </ion-label>
+
+      <span slot="end" style="text-align: end;">
+        <ion-icon slot="end" style="font-size: 18px;" (click)="emitRemove()" name="close" color="dark"></ion-icon>
+        <div class="horizontal">
+          <ion-icon style="font-size: 28px;" (click)="emitAdd()" name="add-circle-outline" color="primary"></ion-icon>
+          <label class="qty">1</label>
+          <ion-icon style="font-size: 28px;margin-left: 10px;" (click)="emitMinus()" name="remove-circle-outline" color="dark"></ion-icon>
+        </div>
+      </span>
+    </ion-item>
+  </ion-card-content>
+</ion-card>

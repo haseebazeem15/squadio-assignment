@@ -1,17 +1,41 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
-      Tab 2
-    </ion-title>
+    <ion-searchbar placeholder="Resturants, cuisines, dishes"></ion-searchbar>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 2</ion-title>
-    </ion-toolbar>
-  </ion-header>
 
-  <app-explore-container name="Tab 2 page"></app-explore-container>
+  <p class="label">Top Categories</p>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col size="6">
+        <div class="store" style="background-image: url('https://static3.depositphotos.com/1006434/216/i/600/depositphotos_2169440-stock-photo-modern-supermarket-view.jpg');">
+          <h5>Vegetable Mart</h5>
+        </div>
+      </ion-col>
+
+      <ion-col size="6">
+        <div class="store" style="background-image: url('https://images.unsplash.com/photo-1534723452862-4c874018d66d?ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8c3RvcmV8ZW58MHx8MHx8&ixlib=rb-1.2.1&w=1000&q=80');">
+          <h5>Lahore Mart</h5>
+        </div>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col size="6">
+        <div class="store" style="background-image: url('https://static3.depositphotos.com/1006434/216/i/600/depositphotos_2169440-stock-photo-modern-supermarket-view.jpg');">
+          <h5>Vegetable Mart</h5>
+        </div>
+      </ion-col>
+
+      <ion-col size="6">
+        <div class="store" style="background-image: url('https://images.unsplash.com/photo-1534723452862-4c874018d66d?ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8c3RvcmV8ZW58MHx8MHx8&ixlib=rb-1.2.1&w=1000&q=80');">
+          <h5>Lahore Mart</h5>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
 </ion-content>

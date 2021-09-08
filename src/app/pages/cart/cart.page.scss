@@ -1,0 +1,88 @@
+.first-section {
+    padding: 5px;
+    padding-top: 0px;
+    // margin-top: 10px;
+    background-color: white;
+    .title {
+        font-size: 16px;
+        color: #333333;
+        background: white;
+        padding-top: 10px;
+        margin-bottom: 10px;
+        padding-left: 6px;
+    }
+    app-cart-item {
+        ion-card{
+            box-shadow: black !important;
+        }
+    }
+}
+
+.address-section {
+    margin-top: 5px;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-right: 10px;
+    margin-left: 10px;
+
+    h5 {
+        font-size: 15px;
+        font-weight: 600;
+        color: green;
+        margin-bottom: 0;
+    }
+
+    .name {
+        margin-top: 8px;
+        margin-bottom: 0;
+        font-size: 13px;
+    }
+
+    .address {
+        margin-top: 5px;
+        font-size: 12px;
+    }
+
+    .swap {
+        float: right;
+        margin-top: 17px;
+        font-size: 19px;
+        color: orange;
+    }
+}
+
+.left-col {
+    padding-left: 15px;
+    font-size: 15px;
+
+    .input-title {
+        position: relative;
+        top: 8px;
+    }
+}
+
+.right-col {
+    text-align: end;
+    padding-right: 21px;
+
+    ion-input {
+        border: 1px solid lightgray;
+        width: 140px;
+        text-align: left;
+        padding-left: 10px !important;
+        font-size: 14px;
+        border-radius: 5px;
+        float: right;
+    }
+}
+
+.total {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.total-amount {
+    font-size: 20px;
+    color: var(--ion-color-primary);
+    font-weight: 700;
+}

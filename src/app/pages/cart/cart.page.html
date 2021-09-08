@@ -1,0 +1,83 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Pay for your order</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="first-section">
+    <p class="title">{{'Items in the cart'}}</p>
+    <app-cart-item></app-cart-item>
+    <app-cart-item></app-cart-item>
+  </div>
+
+  <ion-card class="address-section">
+    <ion-icon name="swap-horizontal" class="swap"></ion-icon>
+    <h5>Delivery Details</h5>
+    <p class="name">Mr John</p>
+    <p class="address">79 C-Block, New york, USA</p>
+  </ion-card>
+
+  <ion-item lines="none">
+    <ion-label>This order is a gift?</ion-label>
+    <ion-checkbox checked="true"></ion-checkbox>
+  </ion-item>
+
+  <ion-row style="margin-top: 10px;">
+    <ion-col size="6" class="left-col">
+      <span>Sub Total</span>
+    </ion-col>
+    <ion-col size="6" class="right-col">
+      <span>$19.98</span>
+    </ion-col>
+  </ion-row>
+
+  <ion-row>
+    <ion-col size="6" class="left-col">
+      <span>Delivery</span>
+    </ion-col>
+    <ion-col size="6" class="right-col">
+      <span>$10.67</span>
+    </ion-col>
+  </ion-row>
+
+  <ion-row>
+    <ion-col size="6" class="left-col">
+      <span>Payment Method</span>
+    </ion-col>
+    <ion-col size="6" class="right-col">
+      <ion-icon style="font-size: 22px;" name="card-outline"></ion-icon>
+    </ion-col>
+  </ion-row>
+
+  <ion-row style="margin-top: 10px;">
+    <ion-col size="6" class="left-col">
+      <span class="input-title">Discount Coupon</span>
+    </ion-col>
+    <ion-col size="6" class="right-col">
+      <ion-input placeholder="Coupon Code"></ion-input>
+    </ion-col>
+  </ion-row>
+
+  <ion-row>
+    <ion-col size="6" class="left-col">
+      <span class="input-title">Amount to Donate</span>
+    </ion-col>
+    <ion-col size="6" class="right-col">
+      <ion-input placeholder="Amount $"></ion-input>
+    </ion-col>
+  </ion-row>
+
+  <ion-row style="margin-top: 10px;">
+    <ion-col size="6" class="left-col">
+      <span class="total">Total</span>
+    </ion-col>
+    <ion-col size="6" class="right-col">
+      <span class="total-amount">$20.89</span>
+    </ion-col>
+  </ion-row>
+</ion-content>
+
+<ion-footer>
+  <ion-button expand="block">Pay Now</ion-button>
+</ion-footer>

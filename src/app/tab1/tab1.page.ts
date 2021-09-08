@@ -7,6 +7,20 @@ import { Component } from '@angular/core';
 })
 export class Tab1Page {
 
+  slideOpts = {
+    initialSlide: 0,
+    speed: 400,
+    slidesPerView: 4.5,
+    spaceBetween: 10
+  };
+
+  slideOpts1 = {
+    initialSlide: 0,
+    speed: 400,
+    slidesPerView: 3,
+    spaceBetween: 10
+  };
+
   constructor() {}
 
 }
