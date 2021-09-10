@@ -12,79 +12,21 @@ ion-searchbar {
 
 ion-slide h1 {
     font-size: 14px;
-    border: 1px solid orange;
     padding: 8px;
     border-radius: 25px;
-    color: orange;
+    background: #d3d3d37d;
 }
 
 .store-section {
     margin-top: 5px;
 }
 
-.store {
-    height: 150px;
-    background-position: center;
-    background-size: cover;
-    margin-left: 10px;
-    margin-right: 10px;
-    border-radius: 15px;
-    position: relative;
-    margin-bottom: 10px;
-
-    ion-badge {
-        margin-top: 14px;
-        margin-left: 10px;
-    }
-
-    h5 {
-        color: white;
-        text-align: center;
-        font-size: 24px;
-        margin-top: 23px;
-        font-weight: 600;
-        position: absolute;
-        left: 0;
-        right: 0;
-        top: 22%;
-    }
-}
-
-
-.product {
-    margin: 0;
-    margin-top: 15px;
-    width: 100%;
-    margin-bottom: 10px;
-    margin-left: 5px;
-
-    img {
-        width: 75px;
-        height: 75px;
-        margin-top: 10px;
-        object-fit: cover;
-    }
-
-    ion-card-content {
-        padding-left: 10px;
-        padding-right: 10px;
-        ion-label {
-            h5 {
-                color: black;
-                font-size: 14px;
-                margin-bottom: 5px;
-                text-align: left;
-            }
-
-            p {
-                text-align: left;
-            }
-        }
-    }
-}
-
 .label {
     margin-left: 14px;
     margin-bottom: 0;
     font-weight: 600;
+}
+
+app-product-card {
+    width: 100%;
 }

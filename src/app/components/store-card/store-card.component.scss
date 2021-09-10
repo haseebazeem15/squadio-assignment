@@ -2,8 +2,11 @@
     height: 150px;
     background-position: center;
     background-size: cover;
-    border-radius: 5px;
+    margin-left: 10px;
+    margin-right: 10px;
+    border-radius: 15px;
     position: relative;
+    margin-bottom: 10px;
 
     ion-badge {
         margin-top: 14px;
@@ -13,26 +16,12 @@
     h5 {
         color: white;
         text-align: center;
-        font-size: 15px;
+        font-size: 24px;
         margin-top: 23px;
-        font-weight: 800;
+        font-weight: 600;
         position: absolute;
         left: 0;
         right: 0;
-        top: 28%;
+        top: 22%;
     }
-}
-
-ion-searchbar {
-    padding-bottom: 1px;
-    --border-radius: 20px;
-    width: 100%;
-    padding: 5px;
-}
-
-.label {
-    margin-left: 10px;
-    margin-bottom: 5px;
-    color: black;
-    font-weight: 500;
 }

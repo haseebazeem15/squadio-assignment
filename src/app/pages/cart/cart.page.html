@@ -11,14 +11,9 @@
     <app-cart-item></app-cart-item>
   </div>
 
-  <ion-card class="address-section">
-    <ion-icon name="swap-horizontal" class="swap"></ion-icon>
-    <h5>Delivery Details</h5>
-    <p class="name">Mr John</p>
-    <p class="address">79 C-Block, New york, USA</p>
-  </ion-card>
+  <app-address-card></app-address-card>
 
-  <ion-item lines="none">
+  <ion-item lines="none" style="--padding-start: 15px;">
     <ion-label>This order is a gift?</ion-label>
     <ion-checkbox checked="true"></ion-checkbox>
   </ion-item>
@@ -79,5 +74,5 @@
 </ion-content>
 
 <ion-footer>
-  <ion-button expand="block">Pay Now</ion-button>
+  <ion-button style="--border-radius: 0;" expand="block">Pay Now</ion-button>
 </ion-footer>

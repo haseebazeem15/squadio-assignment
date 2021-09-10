@@ -11,7 +11,7 @@ export class Tab1Page {
     initialSlide: 0,
     speed: 400,
     slidesPerView: 4.5,
-    spaceBetween: 10
+    spaceBetween: 0
   };
 
   slideOpts1 = {

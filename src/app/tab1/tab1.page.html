@@ -28,14 +28,17 @@
 
   <div class="store-section">
 
-    <div class="store" style="background-image: url('https://images.unsplash.com/photo-1534723452862-4c874018d66d?ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8c3RvcmV8ZW58MHx8MHx8&ixlib=rb-1.2.1&w=1000&q=80');">
-      <ion-badge color="primary">Featured</ion-badge>
-      <h5>Super Mall</h5>
-    </div>
+    <app-store-card
+      name="Super Mall"
+      [isFeatured]="true"
+      photo="https://images.unsplash.com/photo-1534723452862-4c874018d66d?ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8c3RvcmV8ZW58MHx8MHx8&ixlib=rb-1.2.1&w=1000&q=80"
+    ></app-store-card>
 
-    <div class="store" style="background-image: url('https://static3.depositphotos.com/1006434/216/i/600/depositphotos_2169440-stock-photo-modern-supermarket-view.jpg');">
-      <h5>Vegetable Mart</h5>
-    </div>
+    <app-store-card
+      name="Vegetable Mart"
+      [isFeatured]="false"
+      photo="https://static3.depositphotos.com/1006434/216/i/600/depositphotos_2169440-stock-photo-modern-supermarket-view.jpg"
+    ></app-store-card>
 
   </div>
 
@@ -44,66 +47,16 @@
     <p class="label">Products</p>
 
     <ion-slides style="margin-left: 10px;" pager="false" [options]="slideOpts1">
-      <ion-slide>
-        <ion-card class="product">
-          <img src="https://www.belaamie.com/wp-content/uploads/2020/09/Puffed-Rice.jpg" alt="">
-          <ion-card-content>
-            <ion-label>
-              <h5>Rice 1KG</h5>
-              <p>$12.50</p>
-            </ion-label>
-          </ion-card-content>
-        </ion-card>
-      </ion-slide>
-      <ion-slide>
-        <ion-card class="product">
-          <img src="https://mir-s3-cdn-cf.behance.net/project_modules/1400/14213b85162359.5d7351316c047.png" alt="">
-          <ion-card-content>
-            <ion-label>
-              <h5>Moong Daal</h5>
-              <p>$5.00</p>
-            </ion-label>
-          </ion-card-content>
-        </ion-card>
-      </ion-slide>
-      <ion-slide>
-        <ion-card class="product">
-          <img src="https://cdn.shopify.com/s/files/1/0136/8522/7574/products/sufi-sunflower-cooking-oil-pouch-1-ltr-13819228127286_grande.png?v=1576754183" alt="">
-          <ion-card-content>
-            <ion-label>
-              <h5>Oil 1KG</h5>
-              <p>$10.50</p>
-            </ion-label>
-          </ion-card-content>
-        </ion-card>
-      </ion-slide>
-      <ion-slide>
-        <ion-card class="product">
-          <img src="https://m.media-amazon.com/images/I/91RAfsk82zL._SX425_.jpg" alt="">
-          <ion-card-content>
-            <ion-label>
-              <h5>Wheat 1KG</h5>
-              <p>$8.25</p>
-            </ion-label>
-          </ion-card-content>
-        </ion-card>
-      </ion-slide>
-      <ion-slide>
-        <ion-card class="product">
-          <img src="https://images.indianexpress.com/2015/04/biscuit-main.jpg" alt="">
-          <ion-card-content>
-            <ion-label>
-              <h5>Cookies</h5>
-              <p>$0.5</p>
-            </ion-label>
-          </ion-card-content>
-        </ion-card>
+      <ion-slide *ngFor="let item of [1,2,3,4,5,6]">
+        <app-product-card></app-product-card>
       </ion-slide>
     </ion-slides>
 
   </div>
 
-  <div class="store" style="background-image: url('https://static3.depositphotos.com/1006434/216/i/600/depositphotos_2169440-stock-photo-modern-supermarket-view.jpg');">
-    <h5>Vegetable Mart</h5>
-  </div>
+  <app-store-card
+      name="Vegetable Mart"
+      [isFeatured]="false"
+      photo="https://static3.depositphotos.com/1006434/216/i/600/depositphotos_2169440-stock-photo-modern-supermarket-view.jpg"
+  ></app-store-card>
 </ion-content>
