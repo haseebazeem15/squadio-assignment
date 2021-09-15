@@ -1,4 +1,17 @@
-<div class="store" style="background-image: url({{photo}});">
+<!-- <div class="store" style="background-image: url({{photo}});">
   <ion-badge color="primary" *ngIf="isFeatured">Featured</ion-badge>
   <h5>{{name}}</h5>
-</div>
+</div> -->
+
+<ion-card>
+  <img [src]="photo" alt="">
+  <ion-card-content>
+    <ion-item lines="none">
+      <ion-label>
+        <h5>{{name}}</h5>
+        <p>35-45 min</p>
+      </ion-label>
+      <ion-badge color="light" slot="end">4.8</ion-badge>
+    </ion-item>
+  </ion-card-content>
+</ion-card>

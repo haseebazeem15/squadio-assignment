@@ -4,7 +4,7 @@
     background-size: cover;
     margin-left: 10px;
     margin-right: 10px;
-    border-radius: 15px;
+    border-radius: 0px;
     position: relative;
     margin-bottom: 10px;
 
@@ -23,5 +23,37 @@
         left: 0;
         right: 0;
         top: 22%;
+    }
+}
+
+ion-card {
+    border-radius: 0px;
+    box-shadow: none;
+    margin-bottom: 5px;
+    margin-top: 5px;
+
+    img {
+        height: 150px;
+        object-fit: cover;
+        width: 100%;
+    }
+}
+
+ion-card-content {
+    padding: 0;
+
+    ion-item {
+        --padding-start: 5px;
+        ion-label {
+            margin-top: 5px;
+            h5 {
+                font-size: 15px;
+                margin-bottom: 5px;
+            }
+
+            p {
+                font-size: 12px;
+            }
+        }
     }
 }
