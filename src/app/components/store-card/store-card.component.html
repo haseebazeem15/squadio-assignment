@@ -4,14 +4,16 @@
 </div> -->
 
 <ion-card [routerLink]="['/shop-featured']">
+  <div class="label-prog">Spend 30$, Save 10$</div>
+  <ion-icon name="heart-outline" class="heart"></ion-icon>
   <img [src]="photo" alt="">
   <ion-card-content>
     <ion-item lines="none">
       <ion-label>
         <h5>{{name}}</h5>
-        <p>35-45 min</p>
+        <p>$3.99 Delivery Fee <span class="dot">⬤</span> 30-40 min</p>
       </ion-label>
-      <ion-badge color="light" slot="end">4.8</ion-badge>
+      <ion-badge color="light" slot="end" class="rating">4.8</ion-badge>
     </ion-item>
   </ion-card-content>
 </ion-card>

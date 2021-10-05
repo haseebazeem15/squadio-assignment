@@ -41,3 +41,17 @@ app-product-card {
     font-size: 13px;
     margin-bottom: 0;
 }
+
+ion-content {
+    --background: #f9f9f9 !important;
+}
+
+.banner-part {
+    margin-left: 16px;
+    margin-right: 16px;
+    img {
+        border-radius: 5px;
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+}
