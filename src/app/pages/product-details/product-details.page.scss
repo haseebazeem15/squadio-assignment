@@ -1,37 +1,74 @@
 .label {
-    margin-left: 14px;
-    margin-bottom: 0;
-    font-weight: 600;
-    color: var(--ion-color-primary);
+  margin-left: 14px;
+  margin-bottom: 0;
+  font-weight: 600;
+  color: var(--ion-color-primary);
 }
 
 .desc {
-    color: gray;
-    font-size: 14px;
-    margin-left: 15px;
-    margin-right: 15px;
+  color: gray;
+  font-size: 14px;
+  margin-left: 15px;
+  margin-right: 15px;
 }
 
 .qty {
-    text-align: center;
-    margin-bottom: 25px;
+  text-align: center;
+  margin-bottom: 25px;
 
-    .add {
-        margin-right: 10px;
-        font-size: 20px;
-    }
+  .add {
+    margin-right: 10px;
+    font-size: 20px;
+  }
 
-    span {
-        font-size: 20px;
-        color: var(--ion-color-primary);
-        font-weight: 600;
-        border: 1px solid;
-        border-radius: 10%;
-        padding: 10px;
-    }
+  span {
+    font-size: 20px;
+    color: var(--ion-color-primary);
+    font-weight: 600;
+    border: 1px solid;
+    border-radius: 10%;
+    padding: 10px;
+  }
 
-    .remove {
-        margin-left: 10px;
-        font-size: 20px;
-    }
+  .remove {
+    margin-left: 10px;
+    font-size: 20px;
+  }
+}
+
+.price-section {
+  padding-left: 10px;
+  padding-bottom: 10px;
+  .original-price {
+    text-decoration: line-through;
+    margin: 0;
+  }
+  h6 {
+    color: var(--ion-color-primary);
+    font-weight: bold;
+    font-size: 17px;
+    margin: 0;
+    margin-top: 5px;
+  }
+}
+
+.title {
+  margin-left: 15px;
+  font-weight: 600;
+}
+
+.d-flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-right: 10px;
+}
+
+.tag-section {
+  padding-left: 13px;
+  padding-top: 10px;
+  padding-right: 13px;
+  .tags {
+    margin-right: 5px;
+  }
 }

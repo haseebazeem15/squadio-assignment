@@ -1,57 +1,71 @@
 .title {
-    font-size: 16px;
-    color: #333333;
+  font-size: 16px;
+  color: #333333;
 }
 
 .desc {
-    font-size: 12px;
-    color: gray;
+  font-size: 12px;
+  color: gray;
 }
-
 
 .price {
-    font-size: 17px;
-    color: #3FAD72;
-    margin-top: 5px;
-    font-weight: 600;
+  font-size: 17px;
+  color: #3fad72;
+  margin-top: 5px;
+  font-weight: 600;
+  margin-bottom: 10px;
 }
 .qty {
-    font-family: "DM Sans Regular";
-    font-size: 15px;
-    color: #1D1E2C;
-    margin-left: 10px;
-    position: relative;
-    top: -10px;
+  font-family: "DM Sans Regular";
+  font-size: 15px;
+  color: #1d1e2c;
+  margin-left: 10px;
+  position: relative;
+  top: -10px;
 }
 
 ion-card {
-    margin: 0;
-    padding-bottom: 5px;
+  margin: 0;
+  padding-bottom: 5px;
 }
 
 ion-img {
-    border-radius: 5px !important;
-    padding: 0;
-    margin: 0;
-    width: 80px;
-    overflow: hidden;
-    object-fit: cover;
-    margin-right: 7px;
+  border-radius: 5px !important;
+  padding: 0;
+  margin: 0;
+  width: 80px;
+  overflow: hidden;
+  object-fit: cover;
+  margin-right: 7px;
 }
 
 .close {
-    margin-bottom: 5px;
-    font-size: 18px;
+  margin-bottom: 5px;
+  font-size: 18px;
 }
 
 .horizontal {
-    position: relative;
-    text-align: center;
-    margin-top: 6px;
+  position: relative;
+  text-align: center;
+  margin-top: 6px;
 }
 
 ion-card {
-    margin-bottom: 10px;
-    margin-left: 5px;
-    margin-right: 5px;
+  margin-bottom: 10px;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.strike {
+  text-decoration: line-through;
+  color: gray;
+}
+
+.action {
+  text-align: end;
+  padding-right: 10px;
+  ion-button {
+    font-size: 14px;
+    height: 30px;
+  }
 }

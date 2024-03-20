@@ -1,0 +1,123 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Profile Settings</ion-title>
+    <ion-buttons slot="end">
+      <ion-icon
+        name="power"
+        color="danger"
+        [routerLink]="['/login']"
+      ></ion-icon>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="profile-view">
+    <div class="photo">
+      <img
+        class="img1"
+        (click)="takePicture()"
+        [src]="pickedImage ? pickedImage:'/assets/default-avatar.png' "
+        alt=""
+      />
+      <p class="text-muted text-center fw-14">
+        Click on photo to update profile picture
+      </p>
+    </div>
+
+    <form [formGroup]="profileForm">
+      <ion-item lines="none" class="ion-item">
+        <fieldset class="input-item">
+          <legend>Display Name</legend>
+          <ion-input formControlName="displayName" type="text"></ion-input>
+        </fieldset>
+      </ion-item>
+      <ion-item lines="none" class="ion-item">
+        <fieldset class="input-item">
+          <legend>First Name</legend>
+          <ion-input formControlName="firstName" type="text"></ion-input>
+        </fieldset>
+      </ion-item>
+      <ion-item lines="none" class="ion-item">
+        <fieldset class="input-item">
+          <legend>Last Name</legend>
+          <ion-input formControlName="lastName" type="text"></ion-input>
+        </fieldset>
+      </ion-item>
+      <ion-item lines="none" class="ion-item">
+        <fieldset class="input-item">
+          <legend>About Yourself</legend>
+          <ion-textarea
+            formControlName="about"
+            maxlength="100"
+            type="text"
+          ></ion-textarea>
+        </fieldset>
+      </ion-item>
+
+      <ion-item lines="none" class="ion-item">
+        <fieldset class="input-item">
+          <legend>Area Of Interest</legend>
+          <ion-select formControlName="interest" multiple="true">
+            <ion-select-option value="web">Web Development</ion-select-option>
+            <ion-select-option value="game">Game Development</ion-select-option>
+            <ion-select-option value="gardening">Gardening</ion-select-option>
+            <ion-select-option value="football">Football</ion-select-option>
+          </ion-select>
+        </fieldset>
+      </ion-item>
+
+      <ion-item lines="none" class="ion-item">
+        <fieldset class="input-item">
+          <legend>Are you student or professional?</legend>
+          <ion-select formControlName="type">
+            <ion-select-option value="student">Student</ion-select-option>
+            <ion-select-option value="professional"
+              >Professional</ion-select-option
+            >
+          </ion-select>
+        </fieldset>
+      </ion-item>
+
+      <ion-item lines="none" class="ion-item">
+        <fieldset class="input-item">
+          <legend>Experience</legend>
+          <ion-select formControlName="experience">
+            <ion-select-option value="0-5">0-5 years</ion-select-option>
+            <ion-select-option value="5-10">5-10 years</ion-select-option>
+            <ion-select-option value="10+">10+ years</ion-select-option>
+          </ion-select>
+        </fieldset>
+      </ion-item>
+
+      <ion-item lines="none" class="ion-item">
+        <fieldset class="input-item">
+          <legend>Tech Stack</legend>
+          <ion-select formControlName="stack">
+            <ion-select-option value="FE">Frontend</ion-select-option>
+            <ion-select-option value="BE">Backend</ion-select-option>
+          </ion-select>
+        </fieldset>
+      </ion-item>
+
+      <ion-item lines="none" class="ion-item">
+        <fieldset class="input-item">
+          <legend>Role</legend>
+          <ion-textarea
+            formControlName="role"
+            maxlength="100"
+            type="text"
+          ></ion-textarea>
+        </fieldset>
+      </ion-item>
+
+      <ion-button
+        class="save-btn"
+        [disabled]="!profileForm.valid"
+        expand="block"
+        (click)="save()"
+        >Save</ion-button
+      >
+    </form>
+  </div>
+</ion-content>

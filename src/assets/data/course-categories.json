@@ -1,0 +1,26 @@
+[
+  {
+    "name": "Python",
+    "icon": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQe0rTh2JoVXMcZd_pFcjh_mokxSrQNoRW2WoEANeUh8Hv8WknjkMJuaHEbSm1CtMNJsf8&usqp=CAU"
+  },
+  {
+    "name": "JavaScript",
+    "icon": "https://www.freepnglogos.com/uploads/javascript-png/javascript-vector-logo-yellow-png-transparent-javascript-vector-12.png"
+  },
+  {
+    "name": "React",
+    "icon": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/2300px-React-icon.svg.png"
+  },
+  {
+    "name": "Django",
+    "icon": "https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/django-logo-icon.png"
+  },
+  {
+    "name": "Cybersecurity",
+    "icon": "https://cdn-icons-png.flaticon.com/512/1797/1797500.png"
+  },
+  {
+    "name": "Machine Learning",
+    "icon": "https://cdn-icons-png.flaticon.com/512/2083/2083213.png"
+  }
+]

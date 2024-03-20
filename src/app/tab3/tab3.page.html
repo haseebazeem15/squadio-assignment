@@ -1,17 +1,18 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Tab 3
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 3</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <div
+    class="store-section"
+    [ngStyle]="{'height': !wishlistService.wishlist?.length ? '80%' : 'auto'}"
+  >
+    <h5 class="courses-label">My Wishlist</h5>
+    <app-store-card
+      *ngFor="let item of wishlistService.wishlist"
+      [course]="item"
+      [isFeatured]="true"
+      photo="./assets/course-placeholder.png"
+    ></app-store-card>
 
-  <app-explore-container name="Tab 3 page"></app-explore-container>
+    <h5 class="placeholder" *ngIf="!wishlistService.wishlist?.length">
+      Wislist is Empty
+    </h5>
+  </div>
 </ion-content>

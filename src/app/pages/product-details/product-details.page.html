@@ -1,31 +1,53 @@
 <ion-header>
   <ion-toolbar>
     <ion-buttons slot="start">
-      <ion-back-button defaultHref='tabs/tab1'></ion-back-button>
+      <ion-back-button defaultHref="tabs/tab1"></ion-back-button>
     </ion-buttons>
+    <ion-title>{{course?.courseName || ''}}</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+  <img src="./assets/course-placeholder.png" alt="" />
 
-  <img src="https://images.unsplash.com/photo-1534723452862-4c874018d66d?ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8c3RvcmV8ZW58MHx8MHx8&ixlib=rb-1.2.1&w=1000&q=80" alt="">
-
-  <h5 style="margin-left: 15px;">Product Name</h5>
+  <h5 class="title">{{course?.courseName || ''}}</h5>
+  <div class="d-flex">
+    <div class="price-section">
+      <p
+        class="original-price"
+        *ngIf="course.discountPercentage && course.discountPercentage !== '0'"
+      >
+        {{ course.actualPrice }}
+      </p>
+      <h6>₹{{ course.actualPrice | discount : course.discountPercentage }}</h6>
+    </div>
+    <ion-badge>By: {{course.author || 'Not Found'}}</ion-badge>
+  </div>
 
   <p class="label">Description</p>
 
   <p class="desc">
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam ab distinctio aut pariatur, tenetur corrupti quo nesciunt quidem eum repellat cupiditate animi ducimus ipsa in dolore, voluptas culpa eius eos?
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam ab
+    distinctio aut pariatur, tenetur corrupti quo nesciunt quidem eum repellat
+    cupiditate animi ducimus ipsa in dolore, voluptas culpa eius eos?
   </p>
 
+  <p class="label">Keywords</p>
 
+  <div class="tag-section">
+    <ion-badge class="tags" *ngFor="let item of course.tags"
+      >{{item}}</ion-badge
+    >
+  </div>
 </ion-content>
 
 <ion-footer>
-  <div class="qty">
-    <ion-icon class="add" name="add-outline"></ion-icon>
-    <span>1</span>
-    <ion-icon class="remove" name="remove-outline"></ion-icon>
-  </div>
-  <ion-button expand="block">Add to Cart</ion-button>
+  <ion-button
+    expand="block"
+    [color]="cartService.isCourseExistsInCart(course.id) ? 'success':'primary'"
+    (click)="cartService.isCourseExistsInCart(course.id) ? openCart():cartService.addToCart(course)"
+  >
+    {{cartService.isCourseExistsInCart(course.id) ? 'View in Cart':'Add to
+    Cart'}}
+  </ion-button>
 </ion-footer>

@@ -1,24 +1,36 @@
-<ion-card (click)="emitClick()">
+<ion-card>
   <ion-card-content class="ion-no-margin ion-no-padding">
     <ion-item lines="none">
-      <ion-img style="border-radius: 4pt;
-      height: 80px" src="https://www.belaamie.com/wp-content/uploads/2020/09/Puffed-Rice.jpg"  slot="start"></ion-img>
+      <ion-img
+        style="border-radius: 4pt; height: 80px"
+        src="./assets/course-placeholder.png"
+        slot="start"
+      ></ion-img>
       <ion-label>
-        <h2 class="title">Product 1</h2>
-        <h2 class="desc">Green, XL</h2>
+        <h2 class="title">{{ course.courseName }}</h2>
+        <h2 class="desc">Author: {{ course.author }}</h2>
 
-        <p class="price">$20</p>
-
+        <p class="price">
+          <span class="strike">{{ course.actualPrice }}</span>
+          ₹{{ course.actualPrice | discount : course.discountPercentage }}
+        </p>
+        <ion-badge>{{ course.discountPercentage }} Discount Applied</ion-badge>
       </ion-label>
 
-      <span slot="end" style="text-align: end;">
-        <ion-icon slot="end" style="font-size: 18px;" (click)="emitRemove()" name="close" color="dark"></ion-icon>
-        <div class="horizontal">
-          <ion-icon style="font-size: 28px;" (click)="emitAdd()" name="add-circle-outline" color="primary"></ion-icon>
-          <label class="qty">1</label>
-          <ion-icon style="font-size: 28px;margin-left: 10px;" (click)="emitMinus()" name="remove-circle-outline" color="dark"></ion-icon>
-        </div>
+      <span style="text-align: end">
+        <ion-icon
+          slot="end"
+          style="font-size: 18px"
+          name="close"
+          color="dark"
+          (click)="cartService.deleteFromCart(course.id)"
+        ></ion-icon>
       </span>
     </ion-item>
+    <div class="action">
+      <ion-button color="primary" (click)="moveToWishlist()"
+        >Move to Wishlist</ion-button
+      >
+    </div>
   </ion-card-content>
 </ion-card>

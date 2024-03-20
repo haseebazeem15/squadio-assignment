@@ -1,37 +1,56 @@
-.store {
-    height: 150px;
-    background-position: center;
-    background-size: cover;
-    border-radius: 5px;
-    position: relative;
-
-    ion-badge {
-        margin-top: 14px;
-        margin-left: 10px;
-    }
-
-    h5 {
-        color: white;
-        text-align: center;
-        font-size: 15px;
-        margin-top: 23px;
-        font-weight: 800;
-        position: absolute;
-        left: 0;
-        right: 0;
-        top: 28%;
-    }
+.placeholder {
+  color: gray;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* flex: 1; */
+  height: 100%;
 }
 
-ion-searchbar {
-    padding-bottom: 1px;
-    width: 100%;
-    padding: 5px;
+.price-section {
+  color: black;
+  display: flex;
+  justify-content: space-between;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
-.label {
+.fw-600 {
+  font-weight: 600;
+}
+
+.price-tag {
+  display: flex;
+  align-items: center;
+  color: black;
+
+  ion-badge {
     margin-left: 10px;
-    margin-bottom: 5px;
-    color: black;
-    font-weight: 500;
+  }
+}
+
+.discount-title {
+  color: var(--ion-color-success);
+  margin-top: 7px;
+  font-weight: 600;
+}
+
+.first-section {
+  padding: 5px;
+  padding-top: 0px;
+  // margin-top: 10px;
+  background-color: white;
+  .title {
+    font-size: 16px;
+    color: #333333;
+    background: white;
+    padding-top: 0px;
+    margin-bottom: 10px;
+    padding-left: 6px;
+  }
+  app-cart-item {
+    ion-card {
+      box-shadow: black !important;
+    }
+  }
 }

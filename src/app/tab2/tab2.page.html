@@ -1,41 +1,42 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-searchbar placeholder="Resturants, cuisines, dishes"></ion-searchbar>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content [fullscreen]="true">
+  <!-- <ion-list *ngIf="cartService.cart.length">
+    <ion-item *ngFor="let item of cartService.cart">
+      <ion-label>
+        <h2>{{ item.courseName }}</h2>
+        <p>Author: {{ item.author }}</p>
+        <p>
+          Price: ₹{{item.actualPrice | discount: item.discountPercentage }}
+          <ion-badge color="success">{{item.discountPercentage}}</ion-badge>
+        </p>
+        <p>
+          You saved ₹{{item.actualPrice | discountAllocated:
+          item.discountPercentage}}
+        </p>
+      </ion-label>
+      <ion-button color="danger" size="small">Remove</ion-button>
+    </ion-item>
+  </ion-list> -->
 
-  <p class="label">Top Categories</p>
+  <div class="first-section">
+    <p class="title">{{'Items in the cart'}}</p>
+    <app-cart-item
+      *ngFor="let item of cartService.cart"
+      [course]="item"
+    ></app-cart-item>
+  </div>
 
-  <ion-grid>
-    <ion-row>
-      <ion-col size="6" [routerLink]="['/shop-featured']">
-        <div class="store" style="background-image: url('https://static3.depositphotos.com/1006434/216/i/600/depositphotos_2169440-stock-photo-modern-supermarket-view.jpg');">
-          <h5>Vegetable Mart</h5>
-        </div>
-      </ion-col>
-
-      <ion-col size="6" [routerLink]="['/shop-featured']">
-        <div class="store" style="background-image: url('https://images.unsplash.com/photo-1534723452862-4c874018d66d?ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8c3RvcmV8ZW58MHx8MHx8&ixlib=rb-1.2.1&w=1000&q=80');">
-          <h5>Lahore Mart</h5>
-        </div>
-      </ion-col>
-    </ion-row>
-
-    <ion-row>
-      <ion-col size="6" [routerLink]="['/shop-featured']">
-        <div class="store" style="background-image: url('https://static3.depositphotos.com/1006434/216/i/600/depositphotos_2169440-stock-photo-modern-supermarket-view.jpg');">
-          <h5>Vegetable Mart</h5>
-        </div>
-      </ion-col>
-
-      <ion-col size="6" [routerLink]="['/shop-featured']">
-        <div class="store" style="background-image: url('https://images.unsplash.com/photo-1534723452862-4c874018d66d?ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8c3RvcmV8ZW58MHx8MHx8&ixlib=rb-1.2.1&w=1000&q=80');">
-          <h5>Lahore Mart</h5>
-        </div>
-      </ion-col>
-    </ion-row>
-  </ion-grid>
-
+  <p *ngIf="!cartService.cart.length" class="placeholder">
+    Your cart is empty.
+  </p>
 </ion-content>
+<ion-footer *ngIf="cartService.cart.length">
+  <div class="price-section">
+    <h5>You Saved</h5>
+    <h5>₹{{ cartService.totalSavings?.toFixed(2) }}</h5>
+  </div>
+  <div class="price-section">
+    <h5>Total Price</h5>
+    <h5>₹{{ cartService.totalPrice?.toFixed(2) }}</h5>
+  </div>
+  <ion-button expand="block" (click)="checkout()">Checkout</ion-button>
+</ion-footer>

@@ -1,0 +1,38 @@
+<ion-content padding>
+  <div class="container">
+    <h1 class="heading">👋 Welcome<br /><br /></h1>
+    <p class="para">Sign in to continue!</p>
+    <form [formGroup]="loginForm">
+      <ion-item lines="none" class="ion-item">
+        <fieldset class="input-item">
+          <legend>Email Id</legend>
+          <ion-input
+            formControlName="email"
+            type="email"
+            placeholder="name@domain.com"
+          ></ion-input>
+        </fieldset>
+      </ion-item>
+      <ion-item lines="none" class="ion-item">
+        <fieldset class="input-item">
+          <legend>Password</legend>
+          <ion-input
+            formControlName="password"
+            type="password"
+            placeholder="*******"
+          ></ion-input>
+        </fieldset>
+      </ion-item>
+      <p class="signup-text">
+        I'm a new user&nbsp;<a (click)="navigate('signup')">Sign Up?</a>
+      </p>
+      <ion-button
+        class="login-button"
+        [disabled]="!loginForm.valid"
+        (click)="login()"
+        expand="block"
+        >Login</ion-button
+      >
+    </form>
+  </div>
+</ion-content>

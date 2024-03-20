@@ -1,116 +1,61 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-searchbar placeholder="Enter Delivery Address"></ion-searchbar>
+    <ion-searchbar
+      placeholder="Search by author, course and tag name"
+      (search)="search($event)"
+    ></ion-searchbar>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-slides pager="false" [options]="slideOpts" style="margin-bottom: 10px;
-  margin-top: 10px;">
-    <ion-slide>
+  <ion-slides
+    pager="false"
+    [options]="slideOpts"
+    style="margin-bottom: 10px; margin-top: 10px"
+  >
+    <ion-slide
+      *ngFor="let item of courseCategoriesList"
+      (click)="goToSearch(item.name)"
+    >
       <ion-col>
-        <img class="slide-img" src="https://i.pinimg.com/originals/7c/f2/a2/7cf2a29f86cccfe2c24acbef3fd2e962.png" alt="">
-        <p class="slide-text">Clothes</p>
-      </ion-col>
-    </ion-slide>
-    <ion-slide>
-      <ion-col>
-        <img class="slide-img" src="https://www.iconpacks.net/icons/2/free-shopping-bags-icon-2039-thumb.png" alt="">
-        <p class="slide-text">Bags</p>
-      </ion-col>
-    </ion-slide>
-    <ion-slide>
-      <ion-col>
-        <img class="slide-img" src="https://cdn2.iconfinder.com/data/icons/hardware-and-devices/64/Hardware_device_laptop-35-512.png" alt="">
-        <p class="slide-text">Gadgets</p>
-      </ion-col>
-    </ion-slide>
-    <ion-slide>
-      <ion-col>
-        <img class="slide-img" src="https://icons.veryicon.com/png/o/clothes-accessories/clothing-2/shoes-12.png" alt="">
-        <p class="slide-text">Shoes</p>
-      </ion-col>
-    </ion-slide>
-    <ion-slide>
-      <ion-col>
-        <img class="slide-img" src="https://openclipart.org/image/800px/279034" alt="">
-        <p class="slide-text">Accessories</p>
+        <img class="slide-img" [src]="item.icon" alt="" />
+        <p class="slide-text">{{item.name}}</p>
       </ion-col>
     </ion-slide>
   </ion-slides>
 
   <div class="banner-section">
-    <img src="../../assets/banner.png" alt="">
+    <img src="../../assets/banner.png" alt="" />
   </div>
-
-  <ion-slides pager="false" [options]="slideOpts" style="padding: 10px;">
-    <ion-slide>
-      <ion-col>
-        <img class="slide-img" src="https://openclipart.org/image/800px/279034" alt="">
-        <p class="slide-text">Deals</p>
-      </ion-col>
-    </ion-slide>
-    <ion-slide>
-      <ion-col>
-        <img class="slide-img" src="https://image.flaticon.com/icons/png/512/1261/1261163.png" alt="">
-        <p class="slide-text">Grocery</p>
-      </ion-col>
-    </ion-slide>
-    <ion-slide>
-      <ion-col>
-        <img class="slide-img" src="https://banner2.cleanpng.com/20200920/qpp/transparent-kitchen-icon-plate-with-fork-and-knife-eating-set-5f67e8216459b5.621575751600645153411.jpg" alt="">
-        <p class="slide-text">Top Eats</p>
-      </ion-col>
-    </ion-slide>
-    <ion-slide>
-      <ion-col>
-        <img class="slide-img" src="https://pngimage.net/wp-content/uploads/2018/06/hamburguer-vetor-png.png" alt="">
-        <p class="slide-text">American</p>
-      </ion-col>
-    </ion-slide>
-    <ion-slide>
-      <ion-col>
-        <img class="slide-img" src="https://pngimage.net/wp-content/uploads/2018/06/hamburguer-vetor-png.png" alt="">
-        <p class="slide-text">Chinese</p>
-      </ion-col>
-    </ion-slide>
-  </ion-slides>
 
   <div class="store-section">
-
+    <h5 class="courses-label">Explore Courses</h5>
     <app-store-card
-      name="Super Mall"
+      *ngFor="let item of coursesList"
+      [course]="item"
       [isFeatured]="true"
-      photo="https://images.unsplash.com/photo-1534723452862-4c874018d66d?ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8c3RvcmV8ZW58MHx8MHx8&ixlib=rb-1.2.1&w=1000&q=80"
+      photo="./assets/course-placeholder.png"
     ></app-store-card>
-
-    <div class="banner-part">
-      <img src="../../assets/banner2.jpeg" alt="">
-    </div>
-
-    <app-store-card
-      name="Vegetable Mart"
-      [isFeatured]="false"
-      photo="https://static3.depositphotos.com/1006434/216/i/600/depositphotos_2169440-stock-photo-modern-supermarket-view.jpg"
-    ></app-store-card>
-
   </div>
 
-  <div class="products-section">
+  <ion-infinite-scroll (ionInfinite)="onPaginate($event)" threshold="0">
+    <ion-infinite-scroll-content></ion-infinite-scroll-content>
+  </ion-infinite-scroll>
 
-    <p class="label">Products</p>
-
-    <ion-slides style="margin-left: 10px;" pager="false" [options]="slideOpts1">
-      <ion-slide *ngFor="let item of [1,2,3,4,5,6]">
-        <app-product-card></app-product-card>
-      </ion-slide>
-    </ion-slides>
-
-  </div>
-
-  <app-store-card
-      name="Vegetable Mart"
-      [isFeatured]="false"
-      photo="https://static3.depositphotos.com/1006434/216/i/600/depositphotos_2169440-stock-photo-modern-supermarket-view.jpg"
-  ></app-store-card>
+  <ion-fab
+    slot="fixed"
+    horizontal="end"
+    vertical="bottom"
+    *ngIf="cartService.cart?.length"
+    (click)="openCart()"
+  >
+    <ion-badge
+      color="success"
+      style="left: -5px; z-index: 3; position: absolute"
+      >{{cartService.cart?.length}}</ion-badge
+    >
+    <ion-fab-button>
+      <ion-icon name="cart"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
 </ion-content>

@@ -1,4 +1,8 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Course } from 'src/app/global/interfaces/course.interface';
+import { AlertService } from 'src/app/global/services/alert/alert.service';
+import { CartService } from 'src/app/global/services/cart/cart.service';
+import { WishlistService } from 'src/app/global/services/wishlist/wishlist.service';
 
 @Component({
   selector: 'app-cart-item',
@@ -6,34 +10,25 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
   styleUrls: ['./cart-item.component.scss'],
 })
 export class CartItemComponent implements OnInit {
+  @Input() course: Course;
 
-  baseUrl;
-  @Input('citem') citem;
-  @Output('onClick') onClick = new EventEmitter<any>();
-  @Output('onRemove') onRemove = new EventEmitter<any>();
-  @Output('onAddClick') onAddClick = new EventEmitter<any>();
-  @Output('onMinusClick') onMinusClick = new EventEmitter<any>();
+  constructor(
+    public cartService: CartService,
+    private wishlist: WishlistService,
+    private alertService: AlertService
+  ) {}
 
+  ngOnInit() {}
 
-  constructor() {
-   }
-
-  ngOnInit() {
-    console.log('cart item is', this.citem);
+  moveToWishlist() {
+    if (!this.wishlist.isCourseExistsInWishlist(this.course)) {
+      this.wishlist.updateWishlist(this.course);
+      this.cartService.deleteFromCart(this.course.id);
+    } else {
+      this.alertService.presentAlert(
+        'Already Exists in Wishlist',
+        'This course is already exists in wishlist'
+      );
+    }
   }
-
-  emitClick() {
-    // this.onClick.emit();
-  }
-
-  emitRemove() {
-    // this.onRemove.emit();
-  }
-  emitAdd() {
-    // this.onAddClick.emit();
-  }
-  emitMinus() {
-    // this.onMinusClick.emit();
-  }
-
 }

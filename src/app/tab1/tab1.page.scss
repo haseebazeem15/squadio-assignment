@@ -1,57 +1,70 @@
 ion-buttons {
-    margin-top: 6px;
+  margin-top: 6px;
 
-    ion-icon {
-        font-size: 30px;
-    }
+  ion-icon {
+    font-size: 30px;
+  }
 }
 
 ion-searchbar {
-    padding-bottom: 0;
+  padding-bottom: 0;
 }
 
 ion-slide h1 {
-    font-size: 14px;
-    padding: 8px;
-    border-radius: 25px;
-    background: #d3d3d37d;
+  font-size: 14px;
+  padding: 8px;
+  border-radius: 25px;
+  background: #d3d3d37d;
 }
 
 .store-section {
-    margin-top: 5px;
+  margin-top: 5px;
 }
 
 .label {
-    margin-left: 14px;
-    margin-bottom: 0;
-    font-weight: 600;
+  margin-left: 14px;
+  margin-bottom: 0;
+  font-weight: 600;
 }
 
 app-product-card {
-    width: 100%;
+  width: 100%;
 }
 
 .slide-img {
-    width: 30px;
-    height: 30px;
+  width: 30px;
+  height: 30px;
 }
 
 .slide-text {
-    margin-top: 0;
-    font-size: 13px;
-    margin-bottom: 0;
+  margin-top: 0;
+  font-size: 13px;
+  margin-bottom: 0;
 }
 
 ion-content {
-    --background: #f9f9f9 !important;
+  --background: #f9f9f9 !important;
 }
 
 .banner-part {
-    margin-left: 16px;
-    margin-right: 16px;
-    img {
-        border-radius: 5px;
-        margin-top: 5px;
-        margin-bottom: 5px;
-    }
+  margin-left: 16px;
+  margin-right: 16px;
+  img {
+    border-radius: 5px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
+}
+
+.courses-label {
+  font-weight: 600;
+  padding-left: 15px;
+}
+
+.banner-section {
+  padding-left: 15px;
+  padding-right: 15px;
+  img {
+    border-radius: 10px;
+  }
 }

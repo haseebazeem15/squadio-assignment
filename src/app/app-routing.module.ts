@@ -4,37 +4,45 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {
     path: '',
-    loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsPageModule)
+    loadChildren: () =>
+      import('./tabs/tabs.module').then((m) => m.TabsPageModule),
   },
   {
-    path: 'vendors',
-    loadChildren: () => import('./pages/vendors/vendors.module').then( m => m.VendorsPageModule)
+    path: 'product-details/:id',
+    loadChildren: () =>
+      import('./pages/product-details/product-details.module').then(
+        (m) => m.ProductDetailsPageModule
+      ),
   },
   {
-    path: 'shop-featured',
-    loadChildren: () => import('./pages/shop-featured/shop-featured.module').then( m => m.ShopFeaturedPageModule)
+    path: 'login',
+    loadChildren: () =>
+      import('./pages/login/login.module').then((m) => m.LoginPageModule),
   },
   {
-    path: 'product-details',
-    loadChildren: () => import('./pages/product-details/product-details.module').then( m => m.ProductDetailsPageModule)
+    path: 'signup',
+    loadChildren: () =>
+      import('./pages/signup/signup.module').then((m) => m.SignupPageModule),
   },
   {
-    path: 'add-payment',
-    loadChildren: () => import('./pages/add-payment/add-payment.module').then( m => m.AddPaymentPageModule)
+    path: 'forgot-password',
+    loadChildren: () =>
+      import('./pages/forgot-password/forgot-password.module').then(
+        (m) => m.ForgotPasswordPageModule
+      ),
   },
   {
-    path: 'cart',
-    loadChildren: () => import('./pages/cart/cart.module').then( m => m.CartPageModule)
+    path: 'search-results/:query',
+    loadChildren: () =>
+      import('./pages/search-results/search-results.module').then(
+        (m) => m.SearchResultsPageModule
+      ),
   },
-  {
-    path: 'payment-successfull',
-    loadChildren: () => import('./pages/payment-successfull/payment-successfull.module').then( m => m.PaymentSuccessfullPageModule)
-  }
 ];
 @NgModule({
   imports: [
-    RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })
+    RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules }),
   ],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
 export class AppRoutingModule {}

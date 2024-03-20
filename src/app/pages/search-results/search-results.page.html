@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Search Results</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="store-section">
+    <h5 class="courses-label">Showing results of '{{query}}'</h5>
+    <app-store-card
+      *ngFor="let item of searchedCourses"
+      [course]="item"
+      [isFeatured]="true"
+      photo="./assets/course-placeholder.png"
+    ></app-store-card>
+  </div>
+
+  <h5 class="placeholder" *ngIf="!searchedCourses?.length">
+    No Result Found. Try other search
+  </h5>
+</ion-content>

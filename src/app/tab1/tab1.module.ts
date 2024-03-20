@@ -3,20 +3,19 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Tab1Page } from './tab1.page';
-import { ExploreContainerComponentModule } from '../explore-container/explore-container.module';
 
 import { Tab1PageRoutingModule } from './tab1-routing.module';
-import { StoreCardComponent } from '../components/store-card/store-card.component';
-import { ProductCardComponent } from '../components/product-card/product-card.component';
+import { PipesModule } from '../global/pipes/pipes.module';
+import { StoreCardModule } from '../components/store-card/store-card.module';
 
 @NgModule({
   imports: [
     IonicModule,
     CommonModule,
     FormsModule,
-    ExploreContainerComponentModule,
-    Tab1PageRoutingModule
+    Tab1PageRoutingModule,
+    StoreCardModule,
   ],
-  declarations: [Tab1Page, StoreCardComponent, ProductCardComponent]
+  declarations: [Tab1Page],
 })
 export class Tab1PageModule {}
